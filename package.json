@@ -3,6 +3,8 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "rollup": "^4.4.0",
+    "rollup-plugin-svelte": "^7.1.6",
+    "svelte": "^4.2.3",
     "vercel": "^32.5.3",
     "vite": "^4.5.0",
     "vite-plugin-vercel": "^2.0.0"

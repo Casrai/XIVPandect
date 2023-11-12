@@ -1,4 +1,5 @@
 import resolve from "@rollup/plugin-node-resolve";
+import svelte from "rollup-plugin-svelte";
 import commonjs from "@rollup/plugin-commonjs";
 
 // `npm run build` -> `production` is true
@@ -14,6 +15,7 @@ export default {
   },
   plugins: [
     resolve(), // tells Rollup how to find date-fns in node_modules
-    commonjs(), // converts date-fns to ES modules
+    commonjs(),
+    svelte(), // converts date-fns to ES modules
   ],
 };
