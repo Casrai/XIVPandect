@@ -33,6 +33,7 @@
   },
   "type": "module",
   "dependencies": {
-    "rollup": "^4.4.0"
+    "rollup": "^4.4.0",
+    "vite-plugin-vercel": "^2.0.0"
   }
 }
