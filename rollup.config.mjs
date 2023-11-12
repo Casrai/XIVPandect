@@ -7,7 +7,7 @@ import commonjs from "@rollup/plugin-commonjs";
 const production = !process.env.ROLLUP_WATCH;
 
 export default {
-  input: "apps/svelte/src/routes/+page.svelte",
+  input: "src/app.d.ts",
   output: {
     file: "public/bundle.js",
     format: "iife", // immediately-invoked function expression — suitable for <script> tags
