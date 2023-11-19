@@ -1,176 +1,30 @@
-<script>
-    import sidebar from "$lib/components/sidebar.svelte"
+<script lang="ts">
+	import { page } from '$app/stores';
+	import {
+		Sidebar,
+		SidebarGroup,
+		SidebarItem,
+		SidebarWrapper,
+		SidebarDropdownWrapper,
+		SidebarDropdownItem
+	} from 'flowbite-svelte';
+	$: activeUrl = $page.url.pathname;
+	let spanClass = 'pl-2 self-center text-md text-gray-900 whitespace-nowrap dark:text-white';
 </script>
 
-<!-- <Sidebar routes =
-[
-    {
-        "name": "Home",
-        "route": "/"
-    },
-    {
-        "name": "Raiding",
-        "route": "/raiding",
-        "childRoutes": [
-            {
-                "name": "Macros",
-                "route": "/raiding/macros"
-            },
-            {
-                "name": "Markers",
-                "route": "/raiding/markers"
-            },
-            {
-                "name": "Arena Images",
-                "route": "/raiding/arena-images",
-            },
-            {
-                "name": "Savage",
-                "route": "/readme#slots"
-                "childroutes": [
-                    {"name": "Pandaemonium",
-                    "route": "/raiding/savage/pandaemonium"},
-                    {"name": "Eden",
-                    "route": "/raiding/savage/eden"}
-                ]
-            },
-            {
-                "name": "Ultimate",
-                "route": "/raiding/ultimate"
-                "childroutes": [
-                    {"name": "TOP",
-                    "route": "/raiding/ultimate/top"},
-                    {"name": "DSR",
-                    "route": "/raiding/ultimate/dsr"},
-                    {"name": "TEA",
-                    "route": "/raiding/ultimate/tea"},
-                    {"name": "UCOB",
-                    "route": "/raiding/ultimate/ucob"},
-                    {"name": "UWU",
-                    "route": "/raiding/ultimate/uwu"}
-                ]
-            },
-            {
-                "name": "Extreme Trials",
-                "route": "/raiding/ex-trials"
-                "childroutes": [
-                    {"name": "Endwalker",
-                    "route": "/raiding/ex-trials/ew"},
-                    {"name": "Shadowbringers",
-                    "route": "/raiding/ex-trials/shb"},
-                    {"name": "Stormblood",
-                    "route": "/raiding/ex-trials/sb"},
-                    {"name": "Heavensward",
-                    "route": "/raiding/ex-trials/hw"}
-                ]
-            }
-        ]
-    },
-    {
-        "name": "Combat",
-        "route": "/combat",
-        "childRoutes": [
-            {
-                "name": "Openers",
-                "route": "/combat/openers"
-            },
-            {
-                "name": "Gear",
-                "route": "/combat/gear"
-            }
-        ],
-        "collapseTree": true
-    },
-    {
-        "name": "Collection",
-        "route": "/collection",
-        "childRoutes": [
-            {
-                "name": "Triple Triad",
-                "route": "/collection/triple-triad"
-            },
-            {
-                "name": "Relics",
-                "route": "/collection/relics"
-            },
-            {
-                "name": "Achievements",
-                "route": "/collection/achievements"
-            }
-        ]
-    },
-    {
-        "name": "Plugins",
-        "route": "/plugins",
-        "childRoutes": [
-            {
-                "name": "Must-Haves",
-                "route": "/plugins/must-haves"
-            },
-            {
-                "name": "Repos",
-                "route": "/plugins/repos"
-            }
-        ]
-    },
-    {
-        "name": "Modding",
-        "route": "/modding"
-    },
-    {
-        "name": "GPose",
-        "route": "/gpose",
-        "childRoutes": [
-            {
-                "name": "Poses",
-                "route": "/gpose/poses"
-            },
-            {
-                "name": "Presets",
-                "route": "/gpose/presets"
-            }
-        ]
-    },
-    {
-        "name": "Art",
-        "route": "/art",
-        "childRoutes": [
-            {
-                "name": "Templates",
-                "route": "/art/templates"
-            },
-            {
-                "name": "Inspiration",
-                "route": "/art/inspo"
-            }
-        ]
-    },
-    {
-        "name": "Writing",
-        "route": "/writing",
-        "childRoutes": [
-            {
-                "name": "Prompts",
-                "route": "/writing/prompts"
-            },
-            {
-                "name": "HC Collection",
-                "route": "/writing/hc-collection"
-            }
-        ]
-    }    
-] /> -->
+<Sidebar asideClass="w-54" {activeUrl}>
+		<SidebarWrapper divClass="overflow-y-auto py-4 px-3 rounded dark:bg-gray-800">
+			<SidebarGroup>
+				<SidebarItem label="Home" href="/" {spanClass}></SidebarItem>
+				<SidebarDropdownWrapper label="Raiding" href="/raiding" {spanClass}>
+					<SidebarDropdownItem label="Markers" href="/raiding/markers" />	
+				</SidebarDropdownWrapper>
+			</SidebarGroup>
+		</SidebarWrapper>
+	</Sidebar>
 
-<!-- <nav>
-	<a href="/">Home</a>
-	<a href="/raiding">Raiding</a>
-	<a href="/combat">Combat</a>
-    <a href="/collection">Collection</a>
-    <a href="/plugins">Plugins</a>
-    <a href="/modding">Modding</a>
-    <a href="/gpose">GPose</a>
-    <a href="/art">Art</a>
-    <a href="/writing">Writing</a>
-</nav> -->
-
-<slot></slot>
+<div class="flex px-4 mx-auto w-full">
+	<main class="lg:ml-72 w-full mx-auto">
+		<slot />
+	</main>
+</div>
