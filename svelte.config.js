@@ -9,5 +9,5 @@ export default {
       runtime: "edge",
     }),
   },
-  preprocess: [vitePreprocess()],
+  preprocess: [vitePreprocess({})],
 };
