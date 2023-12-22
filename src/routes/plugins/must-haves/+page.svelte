@@ -1,1 +1,0 @@
-<h3>Must-Haves</h3>

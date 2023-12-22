@@ -1,5 +1,0 @@
-<script lang="ts">
-  import '$lib/global.svelte'
-</script>
-
-<p>hi</p>

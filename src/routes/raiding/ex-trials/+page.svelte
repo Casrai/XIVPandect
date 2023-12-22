@@ -1,1 +1,0 @@
-<h2>Extreme Trials</h2>

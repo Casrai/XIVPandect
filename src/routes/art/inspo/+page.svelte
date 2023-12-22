@@ -1,1 +1,0 @@
-<h3>Inspiration</h3>
